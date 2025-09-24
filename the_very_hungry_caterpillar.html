@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes moon{              
+            0%{
+                transform: rotate(30deg);
+            }
+            50%{
+                transform: rotate(-30deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes egg1{
+            0%{
+                transform:rotate(7deg);
+            }
+            50%{
+                transform:rotate(-7deg);
+            }
+            100%{
+                transform:rotate(7deg);
+            }
+        }
+        body{
+            background-image:url("https://tse4.mm.bing.net/th/id/OIP.RsYjjW0YbtSmVME7YDVU9AHaEZ?pid=Api&P=0&h=180");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+        }
+        #moon{
+            width:200px;
+            height:200px;
+            position: absolute;
+            top: 25vh;
+            left: 22vw;
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            /*https://www.svgrepo.com/show/406713/new-moon-face.svg*/
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:3s;
+            animation-iteration-count:infinite;
+            z-index:1;
+
+        }
+        #leaf{
+            width:710px;
+            height:500px;
+            position: fixed;
+            top: 600px;
+            left: 1200px;
+            background-image:url("https://clipartcraft.com/images/food-clipart-very-hungry-caterpillar-11.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        #top_egg{
+            width:70px;
+            height:70px;
+            position: fixed;
+            top: 750px;
+            left: 1400px;
+            background-image:url("https://static.vecteezy.com/system/resources/previews/010/794/334/non_2x/one-white-egg-file-free-png.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:egg1;
+            animation-direction:alternate;
+            animation-duration:3s;
+            animation-iteration-count:infinite;
+        }
+        .text{
+            font-size:2rem;
+            width:60rem;
+            left:50px;
+            color:white;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="moon"></div>
+    <div id="leaf"></div>
+    <div id="top_egg"></div>
+    <div class="text">
+        <p>It was a dark and calm night. On a quiet leaf laid a tiny egg, but it wasnt just any egg, its a caterpillar egg.</p>
+    </div>
+    <button class="press">Next Page</button>
+</body>
+</html>
