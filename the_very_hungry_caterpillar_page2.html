@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes moon2{
+            0%{
+                transform:translate(10%,10%);
+            }
+            100%{
+                transform:translate(20%,180%);
+            }
+        }
+        @keyframes sun{
+            0%{
+                transform:translate(20%,180%);
+            }
+            100%{
+                transform:translate(20%,20%);
+            }
+        }
+        @keyframes move1{
+            0%{
+                transform:translate(80px,0px);
+            }
+            100%{
+                transform:translate(220%,0%);
+            }
+        }
+        @keyframes move2{
+            0%{
+                transform:translate(0%,0%);
+            }
+            100%{
+                transform:translate(-380%,0%);
+            }
+        }
+        @keyframes move3{
+            0%{
+                transform:translate(80px,0px);
+            }
+            100%{
+                transform:translate(320%,0%);
+            }
+        }
+        @keyframes left2{
+            0%{
+                transform:translate(20%,20%);
+            }
+            100%{
+                transform:translate(-520%,45%);
+            }
+        }
+        @keyframes opacity{
+            0%{
+                opacity:0%;
+            }
+            100%{
+                opacity:100%;
+            }
+        }
+        @keyframes opacity2{
+            0%{
+                opacity:100%;
+            }
+            100%{
+                opacity:0%;
+            }
+        }
+        body{
+            background-image: url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        #sun{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:270px;
+            height:270px;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:sun;
+            animation-duration:10s;
+            z-index:3;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+        }
+        #moon2{
+            width:220px;
+            height:220px;
+            position: absolute;
+            top: 22%;
+            left: 22%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-image:url("https://www.svgrepo.com/show/406713/new-moon-face.svg");
+            animation-name:moon2;
+            animation-duration:10s;
+            filter:brightness(2) contrast(1);
+            overflow:hidden;
+            z-index:2;
+            animation-fill-mode:forwards;
+        }
+        #caterpillar{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: absolute;
+            z-index:8;
+            top: 750px;
+            left: 1370px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:left2;
+            animation-duration:3s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+        }
+        #overlap{
+            background-image:url("https://clipground.com/images/clipart-land-6.png");
+            position:absolute;
+            z-index:5;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            bottom:0%;
+            width:100%;
+            height:50%;
+        }
+        #apple{
+            background-image:url("http://www.clipartbest.com/cliparts/xTg/6ge/xTg6gerGc.png");
+            width:200px;
+            height:230px;
+            transform:rotate(-10deg);
+            position: absolute;
+            top: 670px;
+            z-index:7;
+            left: 600px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:opacity2;
+            animation-duration:20s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+        }
+        #eatenapple{
+            background-image:url("https://clipart-library.com/images/gieoAdBid.png");
+            width:250px;
+            height:250px;
+            transform:rotate(8deg);
+            position: absolute;
+            top: 660px;
+            z-index:7;
+            left: 580px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:opacity;
+            animation-duration:25s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:600px;
+            height:300px;
+            position: absolute;
+            top: 90px;
+            left: 0px;
+            z-index:1;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:move1;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #cloud2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:400px;
+            height:200px;
+            position: absolute;
+            top: 60px;
+            right: 0px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:move2;
+            animation-direction:alternate;
+            animation-duration:8s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #text{
+            font-size:1.6rem;
+            position:absolute;
+            z-index:1;
+            width:420px;
+            top: 210px;
+            left: 80px;
+            color:rgb(0, 0, 0);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation-name:move3;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="sun"></div>
+    <div id="moon2"></div>
+    <div id="branch"></div>
+    <div id="caterpillar"></div>
+    <div id="overlap"></div>
+    <div id="apple"></div>
+    <div id="cloud"></div>
+    <div id="cloud2"></div>
+    <div id="text">The caterpillar ventured off to find food, only to find an apple</div>
+    <div id="eatenapple"></div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page3.html">Next Page</a></div>
+</body>
+</html>
