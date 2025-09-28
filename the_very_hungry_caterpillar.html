@@ -18,13 +18,34 @@
         }
         @keyframes egg1{
             0%{
-                transform:rotate(7deg);
+                transform: rotate(10deg);
             }
             50%{
-                transform:rotate(-7deg);
+                transform:translate(0%,5%) rotate(-7deg);
             }
             100%{
-                transform:rotate(7deg);
+                transform:translate(0%,5%) rotate(7deg);
+            }
+        }
+        @keyframes leaf{
+            0%{
+                transform:rotate(0.5deg);
+            }
+            50%{
+                transform:rotate(-0.5deg);
+            }
+            100%{
+                transform:rotate(0.5deg);
+            }
+        }
+        @keyframes opacity{
+            0%{
+                opacity:0%;
+                transform:scale(1,1);
+            }
+            100%{
+                opacity:100%;
+                transform:scale(1.2,1.2);
             }
         }
         body{
@@ -35,22 +56,162 @@
             margin:0;
         }
         #moon{
-            width:200px;
-            height:200px;
-            position: absolute;
-            top: 25vh;
-            left: 22vw;
-            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:250px;
+            height:250px;
+            position: fixed;
+            top: 20%;
+            left: 20%;
+            transform:translate(22%,25%);
+            /*background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");*/
             background-repeat:no-repeat;
             background-size:cover;
-            /*https://www.svgrepo.com/show/406713/new-moon-face.svg*/
+            background-image:url("https://www.svgrepo.com/show/406713/new-moon-face.svg");
             animation-name:moon;
             animation-direction:alternate;
             animation-duration:3s;
             animation-iteration-count:infinite;
-            z-index:1;
-
+            filter:brightness(2) contrast(1);
         }
+        #leaf{
+            width:710px;
+            height:500px;
+            position: fixed;
+            top: 600px;
+            left: 1200px;
+            background-image:url("https://clipartcraft.com/images/food-clipart-very-hungry-caterpillar-11.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:leaf;
+            animation-direction:alternate;
+            animation-duration:3s;
+            animation-iteration-count:infinite;
+        }
+        #top_egg{
+            width:70px;
+            height:70px;
+            position: fixed;
+            top: 750px;
+            left: 1400px;
+            background-image:url("https://static.vecteezy.com/system/resources/previews/010/794/334/non_2x/one-white-egg-file-free-png.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:egg1;
+            animation-direction:alternate;
+            animation-duration:1s;
+            animation-iteration-count:infinite;
+        }
+        .text{
+            font-size:2rem;
+            max-width:60rem;
+            left:50px;
+            color:white;
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        button{
+            width:9rem;
+            height:3rem;
+            border-radius:15%;
+            right:0%;
+            top:0%;
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        .title{
+            font-size:5rem;
+            text-align:center;
+            top:55%;
+            left:5%;
+            width:20px;
+            color:rgb(255, 255, 255);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #star{
+            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 20%;
+            left: 90%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:10s;
+            animation-iteration-count:infinite;
+        }
+        #star2{
+            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 50%;
+            left: 60%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:8s;
+            animation-iteration-count:infinite;
+        }
+        #star3{
+            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+        }
+        #caterpillar{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: fixed;
+            top: 750px;
+            left: 1370px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:opacity;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="moon"></div>
+    <div id="leaf"></div>
+    <div id="top_egg"></div>
+    <div class="text">
+        <p>It was a dark and calm night. On a quiet leaf laid a tiny egg, but it wasnt just any egg, it was a caterpillar egg.</p>
+    </div>
+    <div id="directpage1"><a href="very_hungry_caterpillar_page2.html">Next Page</a></div>
+    <div class="title">THE VERY HUNGRY CATERPILLAR</div>
+    <div id="star"></div>
+    <div id="star2"></div>
+    <div id="star3"></div>
+    <div id="caterpillar"></div>
+</body>
+</html>
         #leaf{
             width:710px;
             height:500px;
