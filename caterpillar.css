@@ -1,0 +1,202 @@
+/*Background*/
+body{
+            background-image:url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+#flowerfield{
+            background-image:url("https://clipground.com/images/field-of-pink-flowers-clipart-8.jpg");
+            position:absolute;
+            z-index:5;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            bottom:0px;
+            width:100%;
+            height:80%;
+            right:-300px;
+        }
+        /*making the caterpillar go up and down (butterfly form, butterfly1)*/
+@keyframes updown{
+    0%{
+        transform:translate(10px,-100px);
+    }
+    100%{
+        transform:translate(-20px,50px);
+    }
+}
+#butterfly1{
+            background-image:url("http://clipart-library.com/images/6ip55E5pT.png");
+            width:300px;
+            height:130px;
+            position: absolute;
+            z-index:7;
+            top: 400px;
+            left: 200px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:updown;
+            animation-duration:1s;
+            animation-direction:alternate;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        /*this is for butterflies 2 where they start to fly all over the place like actual butterflies*/
+@keyframes fly1{
+    0%{
+        transform:translate(20px,100px);
+    }
+    20%{
+        transform:translate(100px,-100px);
+    }
+    40%{
+        transform:translate(-40px,500px);
+    }
+    60%{
+        transform:translate(20px,-300px);
+    }
+    80%{
+        transform:translate(-200px,100px);
+    }
+    100%{
+        transform:translate(40px,200px);
+    }
+}
+#butterfly2{
+            background-image:url("http://clipart-library.com/images/6ip55E5pT.png");
+            width:300px;
+            height:130px;
+            position: absolute;
+            z-index:7;
+            top: 300px;
+            left: 800px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:fly1;
+            animation-duration:5s;
+            animation-direction:alternate;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        /*same thing with fly1, this is for butterfly 3*/
+@keyframes fly2{
+    0%{
+        transform:translate(20px,-500px);
+    }
+    20%{
+        transform:translate(50px,-300px);
+    }
+    40%{
+        transform:translate(20px,-100px);
+    }
+    60%{
+        transform:translate(80px,100px);
+    }
+    80%{
+        transform:translate(100px,-200px);
+    }
+    100%{
+        transform:translate(-10px,-500px);
+    }
+
+}
+#butterfly3{
+            background-image:url("http://clipart-library.com/images/6ip55E5pT.png");
+            width:300px;
+            height:130px;
+            position: absolute;
+            z-index:7;
+            top: 700px;
+            left: 1250px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:fly2;
+            animation-duration:4s;
+            animation-direction:alternate;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        /*when the butterfly mentions how theres more of them*/
+#textbox{
+            width:200px;
+            height:100px;
+            position: fixed;
+            top: 500px;
+            left: 20px;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-image:url("http://pluspng.com/img-png/png-text-box-pin-comics-clipart-text-box-1-2400.png");
+            z-index:9;
+            font-size:1.8rem;
+            animation-name:updown;
+            animation-duration:1s;
+            animation-direction:alternate;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        /*link*/
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        /*what the readers read*/
+        #text{
+            font-size:2rem;
+            color:black;
+            position:absolute;
+            width:400px;
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:810px;
+            height:415px;
+            position: absolute;
+            z-index:3;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            top:-140px;
+            left:-200px;
+            z-index:-1;
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+        #TheEnd{
+            bottom:50px;
+            right:100px;
+            position:absolute;
+            z-index:7;
+            font-size:5rem;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        /*for the the end*/
+        #cloud2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:810px;
+            height:415px;
+            position: absolute;
+            z-index:3;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            bottom:-100px;
+            right:-200px;
+            z-index:7;
+        }
