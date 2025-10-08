@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*this is where the caterpillar discovers sweets, and THEN ON THE 5th PAGE thats when the caterpillar gets sick (lowkey need more pages thats why)*/
+        @keyframes sun{
+            0%{
+                transform:rotate(30deg);
+            }
+            100%{
+                transform:rotate(-30deg);
+            }
+        }
+        body{
+            background-image: url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        #plank{
+            background-image:url("http://clipart-library.com/image_gallery/467614.png");
+            width:100vw;
+            height:100vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            bottom:0px;
+            left:-70px;
+        }
+        /*when the sweets get eaten*/
+        @keyframes opacity{
+            0%{
+                opacity:100%;
+            }
+            100%{
+                opacity:0%;
+            }
+        }
+        #sweet1{
+            background-image:url("https://png.pngtree.com/png-clipart/20210516/original/pngtree-cute-of-sweet-strawberry-tart-cartoon-dessert-png-image_6299361.png");
+            width:300px;
+            height:300px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:620px;
+            left:200px;
+            z-index:5;
+
+            animation-name:opacity;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-delay:16s;
+            animation-fill-mode:forwards;
+        }
+        #sweet2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/010/291/007/non_2x/dessert-watercolor-cartoon-cute-free-png.png");
+            width:250px;
+            height:250px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:600px;
+            left:600px;
+            z-index:5;
+
+            animation-name:opacity;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-delay:11s;
+            animation-fill-mode:forwards;
+        }
+        #sweet3{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/023/324/137/original/waffle-dessert-cartoon-png.png");
+            width:300px;
+            height:300px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:650px;
+            left:1000px;
+            transform:rotate(10deg);
+            z-index:5;
+
+            animation-name:opacity;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-delay:7s;
+            animation-fill-mode:forwards;
+        }
+        #plate1{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:350px;
+            height:140px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:780px;
+            left:980px;
+        }
+        #plate2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:350px;
+            height:140px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:780px;
+            left:550px;
+        }
+        #plate3{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:350px;
+            height:140px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            overflow:hidden;
+            top:780px;
+            left:170px;
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        #cake{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/036/053/451/large_2x/ai-generated-cartoon-birthday-cake-transparent-background-free-png.png");
+            width:20vw;
+            height:40vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            bottom:10px;
+            left:-280px;
+            overflow:hidden;
+            z-index:3;
+        }
+        #sun{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:270px;
+            height:270px;
+            position: absolute;
+            z-index:2;
+            top: 20%;
+            left: 40%;
+            animation-name:sun;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-iteration-count:infinite;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        /*when the caterpillar climbs the table*/
+        @keyframes caterp{
+            0%{
+                transform:rotate(80deg);
+            }
+            10%{
+                transform:rotate(80deg);
+                transform:translateY(-90px);
+            }
+            15%{
+                transform:translate(-90px,-90px);
+            }
+            25%{
+                transform:translate(-600px,-90px)
+            }
+            30%{
+                transform:translate(-600px,-90px);
+            }
+            40%{
+                transform:translate(-1010px,-90px);
+            }
+            50%{
+                transform:translate(-1010px,-90px);
+            }
+            60%{
+                transform:translate(-1400px,-90px);
+            }
+            70%{
+                transform:translate(-1400px,-90px);
+            }
+            100%{
+                transform:translate(-1400px,-90px);
+            }
+        }
+        #caterpillar{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: absolute;
+            z-index:8;
+            top: 860px;
+            left: 1800px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:caterp;
+            animation-duration:25s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #text{
+            font-size:1.4rem;
+            max-width:30rem;
+            left:700px;
+            color:rgb(95, 84, 84);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:center;
+        }
+        /*the cloud is moving*/
+         @keyframes move1{
+            0%{
+                transform:translate(80px,0px);
+            }
+            100%{
+                transform:translate(220%,0%);
+            }
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:515px;
+            height:230px;
+            top:100px;
+            position: absolute;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:move1;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #cloudtext1{
+            background-image:url("https://png.pngtree.com/png-clipart/20231019/original/pngtree-cloud-cartoon-vector-transparent-png-image_13370281.png");
+            left:1040px;
+            top:650px;
+            width:210px;
+            height:230px;
+            position: absolute;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            z-index:1;
+            filter:brightness(2) contrast(1);
+        }
+        #message1{
+            font-size:1.4rem;
+            max-width:10rem;
+            left:1075px;
+            top:750px;
+            color:rgb(95, 84, 84);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:center;
+            z-index:2;
+        }
+        #cloudtext2{
+            background-image:url("https://png.pngtree.com/png-clipart/20231019/original/pngtree-cloud-cartoon-vector-transparent-png-image_13370281.png");
+            left:610px;
+            top:650px;
+            width:210px;
+            height:230px;
+            position: absolute;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            z-index:1;
+            filter:brightness(2) contrast(1);
+        }
+        #message2{
+            font-size:1.4rem;
+            max-width:10rem;
+            left:644px;
+            top:740px;
+            color:rgb(95, 84, 84);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:center;
+            z-index:2;
+        }
+        #message3{
+            font-size:1.4rem;
+            max-width:10rem;
+            left:262px;
+            top:750px;
+            color:rgb(95, 84, 84);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align:center;
+            z-index:2;
+        }
+        #cloudtext3{
+            background-image:url("https://png.pngtree.com/png-clipart/20231019/original/pngtree-cloud-cartoon-vector-transparent-png-image_13370281.png");
+            left:230px;
+            top:650px;
+            width:210px;
+            height:230px;
+            position: absolute;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            z-index:1;
+            filter:brightness(2) contrast(1);
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="plank"></div>
+    <div id="sweet1"></div>
+    <div id="sweet2"></div>
+    <div id="sweet3"></div>
+    <div id="plate1"></div>
+    <div id="plate2"></div>
+    <div id="plate3"></div>
+    <div id="cake"></div>
+    <div id="sun"></div>
+    <div id="caterpillar"></div>
+    <div id="text">
+        <p>WAIT FOR THE CATERPILLAR TO FINISH EATING TO READ THE TEXT, FOLLOW THE CATERPILLAR</p>
+    </div>
+    <div id="cloud"></div>
+    <div id="message1">The caterpillar found sweets</div>
+    <div id="message2">intrigued, the caterpillar kept eating</div>
+    <div id="message3">ignoring all of its greens</div>
+    <div id="cloudtext1"></div>
+    <div id="cloudtext2"></div>
+    <div id="cloudtext3"></div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page5.html">Next Page</a></div>
+    
+    <div id="directpage2"><a href="very_hungry_caterpillar_page3.html">Go Back</a></div>
+</body>
+</html>
