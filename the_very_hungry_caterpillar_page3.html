@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sun{
+            0%{
+                transform:rotate(30deg);
+            }
+            100%{
+                transform:rotate(-30deg);
+            }
+        }
+        /*make the caterpillar move up to the grape*/
+        @keyframes left1{
+            0%{
+                transform:translate(20%,20%);
+            }
+            99%{
+                opacity:100%;
+            }
+            100%{
+                transform:translate(-410%,-40%);
+                opacity:0%;
+            }
+        }
+        /*the next fruit the caterpillar goes to is the pear*/
+        @keyframes left2{
+            0%{
+                transform:translate(9%,23%);
+                opacity:0%;
+            }
+            1%{
+                opacity:100%;
+            }
+            50%{
+                opacity:100%;
+            }
+            99%{
+                opacity:100%;
+            }
+            100%{
+                transform:translate(-360%,-50%);
+                opacity:0%;
+            }
+        }
+        /*the last fruit it goes to is the apple*/
+        @keyframes left3{
+            0%{
+                transform:translate(9%,-10%);
+                opacity:0%;
+            }
+            1%{
+                opacity:100%;
+            }
+            100%{
+                transform:translate(-470%,-50%);
+                opacity:100%;
+            }
+        }
+        /*when the fruits disapear*/
+        @keyframes eat{
+            100%{
+                opacity:0%;
+            }
+        }
+        /*caterpillar moves first*/
+        @keyframes move1{
+            0%{
+                transform:translate(80px,0px);
+            }
+            100%{
+                transform:translate(220%,0%);
+            }
+        }
+        /*second caterpillar*/
+        @keyframes move2{
+            0%{
+                transform:translate(0%,0%);
+            }
+            100%{
+                transform:translate(-380%,0%);
+            }
+        }
+        /*third caterpillar*/
+        @keyframes move3{
+            0%{
+                transform:translate(80px,0px);
+            }
+            100%{
+                transform:translate(320%,0%);
+            }
+        }
+        body{
+            background-image: url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        #sun{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:270px;
+            height:270px;
+            position: absolute;
+            z-index:2;
+            top: 20%;
+            left: 40%;
+            animation-name:sun;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-iteration-count:infinite;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #apple{
+            background-image:url("http://www.clipartbest.com/cliparts/xTg/6ge/xTg6gerGc.png");
+            width:200px;
+            height:230px;
+            position: absolute;
+            top: 580px;
+            left: 200px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            z-index:8;
+            animation-name:eat;
+            animation-duration:8s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            animation-delay:21s;
+        }
+        #pear{
+            background-image:url("http://clipart-library.com/image_gallery2/Pear-Free-PNG-Image.png");
+            width:200px;
+            height:240px;
+            position: absolute;
+            top: 610px;
+            left: 720px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            z-index:8;
+            animation-name:eat;
+            animation-duration:8s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            animation-delay:13s;
+        }
+        #grapes{
+            background-image:url("https://png.pngtree.com/png-vector/20220912/ourmid/pngtree-grape-cartoon-fruit-png-image_6172611.png");
+            width:400px;
+            height:430px;
+            position: absolute;
+            top: 580px;
+            left: 1100px;
+            transform:rotate(50deg);
+            background-repeat:no-repeat;
+            background-size:cover;
+            z-index:8;
+            animation-name:eat;
+            animation-duration:8s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            animation-delay:6s;
+        }
+        #caterpillar{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: absolute;
+            z-index:8;
+            top: 860px;
+            left: 1800px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:left1;
+            animation-duration:8s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            transform:rotate(10deg);
+        }
+        #caterpillar2{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: absolute;
+            z-index:8;
+            top: 810px;
+            left: 1300px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:left2;
+            animation-duration:8s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            transform:rotate(10deg);
+            animation-delay:7.9s;
+            opacity:0%;
+        }
+        #caterpillar3{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:120px;
+            height:100px;
+            position: absolute;
+            z-index:8;
+            top: 770px;
+            left: 870px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:left3;
+            animation-duration:7s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            transform:rotate(10deg);
+            animation-delay:15.8s;
+            opacity:0%;
+        }
+        /*the hill*/
+        #overlap{
+            background-image:url("http://clipground.com/images/green-grass-background-clipart-1.png");
+            filter:brightness(1) contrast(1);
+            position:absolute;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            width:800vw;
+            height:100vh;
+            top:15%;
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:615px;
+            height:315px;
+            position: absolute;
+            top: 90px;
+            left: 0px;
+            z-index:3;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:move1;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #cloud2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:400px;
+            height:200px;
+            position: absolute;
+            z-index:1;
+            top: 60px;
+            right: 0px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:move2;
+            animation-direction:alternate;
+            animation-duration:8s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #text{
+            font-size:1.6rem;
+            position:absolute;
+            z-index:3;
+            width:420px;
+            top: 210px;
+            left: 80px;
+            color:rgb(0, 0, 0);
+            position:absolute;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation-name:move3;
+            animation-direction:alternate;
+            animation-duration:20s;
+            animation-iteration-count:infinite;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="sun"></div>
+    <div id="apple"></div>
+    <div id="pear"></div>
+    <div id="grapes"></div>
+    <div id="caterpillar"></div>
+    <div id="overlap"></div>
+    <div id="caterpillar2"></div>
+    <div id="caterpillar3"></div>
+    <div id="cloud"></div>
+    <div id="cloud2"></div>
+    <div id="text">Still feeling hungry, it continued on discovering more fruits, eating and eating until everything was gone</div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page4.html">Next Page</a></div>
+
+    <div id="directpage2"><a href="very_hungry_caterpillar_page2.html">Go Back</a></div>
+</body>
+</html>
