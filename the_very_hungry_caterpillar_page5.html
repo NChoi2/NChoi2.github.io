@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sun{
+            0%{
+                transform:rotate(30deg);
+            }
+            100%{
+                transform:rotate(-30deg);
+            }
+        }
+        @keyframes left1{
+            0%{
+                transform:translate(0,0);
+            }
+            99%{
+                opacity:90%;
+                animation-duration:10s;
+            }
+            100%{
+                transform:translate(-430%,-90%);
+                opacity:0%;
+            }
+        }
+        /*the plate and face shows up*/
+        @keyframes shows{
+            0%{
+                opacity:0%;
+            }
+            100%{
+                opacity:100%;
+            }
+        }
+        @keyframes opacity{
+            0%{
+                opacity:100%;
+            }
+            100%{
+                opacity:0%;
+            }
+        }
+        @keyframes big{
+            0%{
+                transform:scaleX(-1);
+                opacity:0%;
+            }
+            100%{
+                transform:scaleX(-1);
+                opacity:100%;
+            }
+        }
+        body{
+            background-image: url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        #table{
+            background-image:url("https://www.pinclipart.com/picdir/big/198-1987307_2000cb-20160919010759-cartoon-dinner-table-clipart.png");
+            width:100vw;
+            height:40vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            bottom:-80px;
+            left:40px;
+            z-index:1;
+        }
+        #plate{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:17vw;
+            height:13.5vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            z-index:2;
+            bottom:150px;
+            left:530px;
+            overflow:hidden;
+            animation-name:shows;
+            animation-duration:5s;
+            animation-delay:4s;
+            animation-fill-mode:forwards;
+            opacity:0%;
+        }
+        #plate2{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:17vw;
+            height:13.5vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            z-index:2;
+            bottom:10px;
+            left:1300px;
+            overflow:hidden;
+        }
+        #plate3{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/028/799/994/original/kitchen-items-plate-cartoon-style-png.png");
+            width:17vw;
+            height:13.5vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            z-index:2;
+            bottom:-70px;
+            left:1700px;
+            overflow:hidden;
+        }
+        #cake{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/036/053/451/large_2x/ai-generated-cartoon-birthday-cake-transparent-background-free-png.png");
+            width:20vw;
+            height:40vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            bottom:100px;
+            left:500px;
+            animation-name:opacity;
+            animation-duration:5s;
+            animation-delay:4s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            z-index:2;
+        }
+        #caterpillar{
+            background-image:url("https://pluspng.com/img-png/very-hungry-caterpillar-png-the-very-hungry-caterpillar-at-the-kay-meek-centre-west-vancouver-1520.png");
+            width:150px;
+            height:130px;
+            position: absolute;
+            z-index:8;
+            top: 800px;
+            left: 1400px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:left1;
+            animation-duration:5s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+        }
+        #fatcaterpillar{
+            background-image:url("https://cdn.pixabay.com/photo/2023/09/09/13/48/caterpillar-8243219_1280.png");
+            width:220px;
+            height:130px;
+            position: absolute;
+            z-index:8;
+            top: 690px;
+            left: 750px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:big;
+            animation-duration:2.1s;
+            animation-delay:4.1s;
+            opacity:0%;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            transform:scaleX(-1);
+        }
+        #disgustedface{
+            background-image:url("https://cdn2.iconfinder.com/data/icons/emoticons-flat-1/512/Disgusted_emoji_emoticon-512.png");
+            width:60px;
+            height:60px;
+            position: absolute;
+            z-index:8;
+            top: 730px;
+            left: 735px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:shows;
+            animation-duration:5s;
+            overflow:hidden;
+            animation-fill-mode:forwards;
+            animation-delay:10s;
+            opacity:0%;
+        }
+        #sun{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:270px;
+            height:270px;
+            position: absolute;
+            z-index:2;
+            top: 30%;
+            left: 70%;
+            animation-name:sun;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-iteration-count:infinite;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:810px;
+            height:415px;
+            position: absolute;
+            z-index:3;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            top:-150px;
+            left:-200px;
+            z-index:-1;
+        }
+        /*the text*/
+        #test{
+            font-size:2rem;
+            height:50px;
+            width:500px;
+            position:absolute;
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="table"></div>
+    <div id="cake"></div>
+    <div id="caterpillar"></div>
+    <div id="fatcaterpillar"></div>
+    <div id="disgustedface"></div>
+    <div id="plate"></div>
+    <div id="plate2"></div>
+    <div id="plate3"></div>
+    <div id="sun"></div>
+    <div id="test"><p>The caterpillar kept eating and eating, until finally, it had a stomach ache </p></div>
+    <div id="shape_outside"></div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page6.html">Next Page</a></div>
+    <div id="cloud"></div>
+
+    <div id="directpage2"><a href="very_hungry_caterpillar_page4.html">Go Back</a></div>
+</body>
+</html>
