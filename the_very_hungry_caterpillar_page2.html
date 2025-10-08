@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*the mooon moves down*/
         @keyframes moon2{
             0%{
                 transform:translate(10%,10%);
@@ -13,6 +14,7 @@
                 transform:translate(20%,180%);
             }
         }
+        /*the sun comes up*/
         @keyframes sun{
             0%{
                 transform:translate(20%,180%);
@@ -21,6 +23,7 @@
                 transform:translate(20%,20%);
             }
         }
+        /*cloud*/
         @keyframes move1{
             0%{
                 transform:translate(80px,0px);
@@ -29,6 +32,7 @@
                 transform:translate(220%,0%);
             }
         }
+        /*cloud*/
         @keyframes move2{
             0%{
                 transform:translate(0%,0%);
@@ -37,6 +41,7 @@
                 transform:translate(-380%,0%);
             }
         }
+        /*the text is moving*/
         @keyframes move3{
             0%{
                 transform:translate(80px,0px);
@@ -45,6 +50,7 @@
                 transform:translate(320%,0%);
             }
         }
+        /*the caterpillar is moving*/
         @keyframes left2{
             0%{
                 transform:translate(20%,20%);
@@ -53,6 +59,7 @@
                 transform:translate(-520%,45%);
             }
         }
+        /*the first apple disapears*/
         @keyframes opacity{
             0%{
                 opacity:0%;
@@ -61,9 +68,11 @@
                 opacity:100%;
             }
         }
+        /*the second apple appears*/
         @keyframes opacity2{
             0%{
                 opacity:100%;
+                transform:scaleX(-1);
             }
             100%{
                 opacity:0%;
@@ -150,12 +159,13 @@
             animation-duration:20s;
             overflow:hidden;
             animation-fill-mode:forwards;
+            transform:scaleX(-1);
         }
         #eatenapple{
             background-image:url("https://clipart-library.com/images/gieoAdBid.png");
             width:250px;
             height:250px;
-            transform:rotate(8deg);
+            transform:rotate(15deg);
             position: absolute;
             top: 660px;
             z-index:7;
@@ -225,6 +235,12 @@
             position:absolute;
             z-index:7;
         }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
     </style>
 </head>
 <body>
@@ -236,8 +252,14 @@
     <div id="apple"></div>
     <div id="cloud"></div>
     <div id="cloud2"></div>
-    <div id="text">The caterpillar ventured off to find food, only to find an apple</div>
+    <div id="text">The caterpillar ventured off to find food, and came across an apple</div>
     <div id="eatenapple"></div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page3.html">Next Page</a></div>
+
+    <div id="directpage2"><a href="index.html">Go Back</a></div>
+</body>
+</html>
 
     <div id="directpage1"><a href="very_hungry_caterpillar_page3.html">Next Page</a></div>
 </body>
