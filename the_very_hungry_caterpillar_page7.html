@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*make the sun/moon go back and down for a few times, make it forward. then after a while, make the caterpillar come out of its cacoon*/
+        body{
+            background-image:url("https://media.istockphoto.com/vectors/landscape-summer-green-fields-vector-id1206768509?k=20&m=1206768509&s=612x612&w=0&h=F_o27Ah6wTseBaIUDdcC-a8wG3QmsoOePfDTbOUGwXQ=");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+            padding:0;
+        }
+        /*when the cocoon starts to shake*/
+        @keyframes shaking{
+            0%{
+                transform:rotate(10deg);
+            }
+            20%{
+                transform:rotate(-10deg);
+            }
+            30%{
+                transform:rotate(0deg);
+            }
+            40%{
+                transform:rotate(10deg);
+            }
+            50%{
+                transform:rotate(-10deg);
+            }
+            60%{
+                transform:rotate(0deg);
+            }
+            70%{
+                transform:rotate(10deg);
+            }
+            80%{transform:rotate(-10deg);}
+            90%{transform:rotate(0deg);}
+            100%{transform:rotate(0deg);}
+        }
+        #cacoon{
+            background-image:url("http://4.bp.blogspot.com/-Q6-hJ2oUWc0/UUeDXib6BfI/AAAAAAAAAUM/D9aY-pZqKJw/s1600/Hungry-caterpillar-cocoon.png");
+            width:230px;
+            height:130px;
+            position: absolute;
+            z-index:8;
+            top: 700px;
+            left: 1300px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:shaking;
+            animation-duration:5s;
+            animation-fill-mode:forwards;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        #leaf{
+            width:710px;
+            height:500px;
+            position: fixed;
+            top: 600px;
+            left: 1200px;
+            background-image:url("https://clipartcraft.com/images/food-clipart-very-hungry-caterpillar-11.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:leaf;
+            animation-direction:alternate;
+            animation-duration:3s;
+            animation-iteration-count:infinite;
+            filter:brightness(1.2) contrast(1);
+        }
+        /*when the butterfly comes out of the cocoon*/
+        @keyframes scale{
+            0%{
+                transform:scale(0%,0%);
+                opacity:100%;
+                z-index:8;
+            }
+            20%{
+                transform:scale(300px,130px);
+            }
+            30%{
+                transform:scale(300px,130px);
+            }
+            99%{
+                opacity:100%;
+                z-index:8;
+            }
+            100%{
+                opacity:0%;
+            }
+        }
+        #butterfly{
+            background-image:url("http://clipart-library.com/images/6ip55E5pT.png");
+            width:300px;
+            height:130px;
+            position: absolute;
+            z-index:7;
+            top: 700px;
+            left: 1250px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:scale;
+            animation-duration:5s;
+            animation-delay:5s;
+            animation-fill-mode:forwards;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+            opacity:0%;
+        }
+        /*make a second butterfly so that the butterfly is able to spin around*/
+        @keyframes moving{
+            0%{
+                opacity:100%;
+            }
+            10%{
+                opacity:100%;
+            }
+            70%{
+                opacity:100%;
+            }
+            79%{
+                opacity:100%;
+            }
+            80%{
+                transform:rotate(180deg);
+            }
+            85%{
+                transform:rotate(180deg);
+            }
+            100%{
+                opacity:100%;
+            }
+        }
+        #butterfly2{
+            background-image:url("http://clipart-library.com/images/6ip55E5pT.png");
+            width:300px;
+            height:130px;
+            position: absolute;
+            z-index:8;
+            top: 700px;
+            left: 1250px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            animation-name:moving;
+            animation-duration:5s;
+            animation-delay:9.9s;
+            animation-fill-mode:forwards;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+            opacity:0%;
+        }
+        #sun{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/027/129/363/non_2x/a-yellow-moon-with-a-smiley-face-isolated-on-transparent-background-png.png");
+            width:270px;
+            height:270px;
+            position: absolute;
+            z-index:2;
+            top: 20%;
+            left: 40%;
+            animation-name:sun;
+            animation-direction:alternate;
+            animation-duration:2s;
+            animation-iteration-count:infinite;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-timing-function:cubic-bezier(0,-0.01,1,1.01);
+        }
+        @keyframes sun{
+            0%{
+                transform:rotate(30deg);
+            }
+            100%{
+                transform:rotate(-30deg);
+            }
+        }
+        /*what the people read*/
+        #text{
+            font-size:2rem;
+            color:black;
+            position:absolute;
+            width:400px;
+        }
+        #cloud{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/013/166/967/original/cartoon-cloud-illustration-png.png");
+            width:810px;
+            height:415px;
+            position: absolute;
+            z-index:3;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            top:-90px;
+            left:-200px;
+            z-index:-1;
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="cacoon"></div>
+    <div id="leaf"></div>
+    <div id="butterfly"></div>
+    <div id="butterfly2"></div>
+    <div id="sun"></div>
+    <div id="text"><p>
+        A few days have past, and the weird brown cocoon starts to shake. Suddenly a beautiful butterfly sprouts out of the cocoon.
+    </p></div>
+    <div id="cloud"></div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page8.html">Next Page</a></div>
+
+    <div id="directpage2"><a href="very_hungry_caterpillar_page6.html">Go Back</a></div>
+</body>
+</html>
