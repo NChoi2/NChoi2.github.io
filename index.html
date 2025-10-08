@@ -16,6 +16,7 @@
                 transform: rotate(30deg);
             }
         }
+        /*the egg is shaking*/
         @keyframes egg1{
             0%{
                 transform: rotate(10deg);
@@ -27,6 +28,7 @@
                 transform:translate(0%,5%) rotate(7deg);
             }
         }
+        /*the leaf is slightly shaking*/
         @keyframes leaf{
             0%{
                 transform:rotate(0.5deg);
@@ -38,6 +40,7 @@
                 transform:rotate(0.5deg);
             }
         }
+        /*the caterpillar shows up*/
         @keyframes opacity{
             0%{
                 opacity:0%;
@@ -49,7 +52,7 @@
             }
         }
         body{
-            background-image:url("https://tse4.mm.bing.net/th/id/OIP.RsYjjW0YbtSmVME7YDVU9AHaEZ?pid=Api&P=0&h=180");
+            background-image:url("https://tse2.mm.bing.net/th/id/OIP.6kLFB91_MeNZ0XwgEX1M0QHaEo?pid=Api&P=0&h=180");
             background-repeat:no-repeat;
             background-size:cover;
             overflow:hidden;
@@ -137,7 +140,8 @@
             font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         #star{
-            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
             width:100px;
             height:100px;
             position: fixed;
@@ -152,7 +156,8 @@
             animation-iteration-count:infinite;
         }
         #star2{
-            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
             width:100px;
             height:100px;
             position: fixed;
@@ -167,7 +172,8 @@
             animation-iteration-count:infinite;
         }
         #star3{
-            background-image:url("https://www.pngkit.com/png/full/156-1568798_star-cartoon-png-animated-white-star-png.png");
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
             width:100px;
             height:100px;
             position: fixed;
@@ -212,46 +218,6 @@
     <div id="caterpillar"></div>
 </body>
 </html>
-        #leaf{
-            width:710px;
-            height:500px;
-            position: fixed;
-            top: 600px;
-            left: 1200px;
-            background-image:url("https://clipartcraft.com/images/food-clipart-very-hungry-caterpillar-11.png");
-            background-repeat:no-repeat;
-            background-size:cover;
-        }
-        #top_egg{
-            width:70px;
-            height:70px;
-            position: fixed;
-            top: 750px;
-            left: 1400px;
-            background-image:url("https://static.vecteezy.com/system/resources/previews/010/794/334/non_2x/one-white-egg-file-free-png.png");
-            background-repeat:no-repeat;
-            background-size:cover;
-            animation-name:egg1;
-            animation-direction:alternate;
-            animation-duration:3s;
-            animation-iteration-count:infinite;
-        }
-        .text{
-            font-size:2rem;
-            width:60rem;
-            left:50px;
-            color:white;
-            position:absolute;
-        }
-    </style>
-</head>
-<body>
-    <div id="moon"></div>
-    <div id="leaf"></div>
-    <div id="top_egg"></div>
-    <div class="text">
-        <p>It was a dark and calm night. On a quiet leaf laid a tiny egg, but it wasnt just any egg, its a caterpillar egg.</p>
-    </div>
     <button class="press">Next Page</button>
 </body>
 </html>
