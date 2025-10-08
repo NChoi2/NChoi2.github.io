@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*use the hovor feature from the psuedo code and put down "hovor over me to make me fall asleep" and the caterpillar will fall asleep, somehow*/
+        body{
+            background-image:url("https://tse2.mm.bing.net/th/id/OIP.6kLFB91_MeNZ0XwgEX1M0QHaEo?pid=Api&P=0&h=180");
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            margin:0;
+        }
+        #caterpillar{
+            background-image:url("https://cdn.pixabay.com/photo/2023/09/09/13/48/caterpillar-8243219_1280.png");
+            width:220px;
+            height:130px;
+            position: absolute;
+            z-index:8;
+            top: 700px;
+            left: 1300px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+        }
+        /*when you hover over the caterpillars face, this will show up*/
+        .sleepy{
+            background-image:url("https://freepngimg.com/thumb/emoji/65013-emoticon-sticker-smiley-face-sleep-emoji.png");
+            width:60px;
+            height:60px;
+            position: absolute;
+            z-index:8;
+            top: 736px;
+            left: 1470px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            opacity:0%;
+        }
+        /*the face will shake*/
+        @keyframes shake{
+            0%{
+                transform: rotate(10deg);
+                opacity:0%;
+            }
+            50%{
+                transform: rotate(-10deg);
+            }
+            100%{
+                transform: rotate(10deg);
+                opacity:100%;
+            }
+        }
+        /*when you hover over it*/
+        .sleepy:hover{
+            background-image:url("https://freepngimg.com/thumb/emoji/65013-emoticon-sticker-smiley-face-sleep-emoji.png");
+            width:60px;
+            height:60px;
+            position: absolute;
+            z-index:8;
+            top: 736px;
+            left: 1470px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            overflow:hidden;
+            opacity:100%;
+            animation-name:shake;
+            animation-duration:5s;
+            animation-fill-mode:forwards;
+        }
+        /*the caterpillar is talking*/
+        #textbox{
+            width:200px;
+            height:100px;
+            position: fixed;
+            top: 750px;
+            left: 1200px;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-image:url("http://pluspng.com/img-png/png-text-box-pin-comics-clipart-text-box-1-2400.png");
+            z-index:9;
+        }
+        p{
+            font-size:1rem;
+            width:140px;
+            left:50px;
+            text-align:center;
+        }
+        #leaf{
+            width:710px;
+            height:500px;
+            position: fixed;
+            top: 600px;
+            left: 1200px;
+            background-image:url("https://clipartcraft.com/images/food-clipart-very-hungry-caterpillar-11.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:leaf;
+            animation-direction:alternate;
+            animation-duration:3s;
+            animation-iteration-count:infinite;
+            filter:brightness(1.2) contrast(1);
+        }
+        #moon{
+            width:250px;
+            height:250px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-image:url("https://www.svgrepo.com/show/406713/new-moon-face.svg");
+            filter:brightness(2) contrast(1);
+            clip-path: circle(50% at 50% 50%);
+            shape-outside:circle(50% at 50% 50%);
+            float:left;
+            margin-right:20px;
+            margin-bottom:10px;
+        }
+        #text{
+            font-size:2rem;
+            color:white;
+            width:500px;
+            text-align:right;
+        }
+        @keyframes moon{              
+            0%{
+                transform: rotate(30deg);
+            }
+            50%{
+                transform: rotate(-30deg);
+            }
+            100%{
+                transform: rotate(30deg);
+            }
+        }
+        #star{
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 30%;
+            left: 90%;
+            transform:translate(22%,25%);
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:10s;
+            animation-iteration-count:infinite;
+        }
+        #star2{
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 10%;
+            left: 40%;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:8s;
+            animation-iteration-count:infinite;
+        }
+        #star3{
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background-color:white;
+            width:100px;
+            height:100px;
+            position: fixed;
+            top: 70%;
+            left: 20%;
+            background-repeat:no-repeat;
+            background-size:cover;
+            animation-name:moon;
+            animation-direction:alternate;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+        }
+        a{
+            color:white;
+            font-size:50px;
+            border-radius:8%;
+        }
+        #directpage1{
+            top:10px;
+            right:10px;
+            position:absolute;
+            z-index:7;
+        }
+        #directpage2{
+            top:10px;
+            right:260px;
+            position:absolute;
+            z-index:7;
+        }
+    </style>
+</head>
+<body>
+    <div id="caterpillar"></div>
+    <div id="leaf"></div>
+    <div class="sleepy"></div>
+    <div id="moon"></div>
+    <div id="textbox">
+        <p>.   Hover over my head to help me fall asleep!</p>
+    </div>
+    <div id="star"></div>
+    <div id="star2"></div>
+    <div id="star3"></div>
+    <div id="text">After eating all of the sweets on the table, the caterpillar, feeling full and tired, slowly went to its leaf to take a nap. letting the gentle breeze sway it to sleep. Except, it never woke back up.</div>
+
+    <div id="directpage1"><a href="very_hungry_caterpillar_page7.html">Next Page</a></div>
+
+    <div id="directpage2"><a href="very_hungry_caterpillar_page5.html">Go Back</a></div>
+</body>
+</html>
