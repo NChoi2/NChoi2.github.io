@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HOTEL</title>
+</head>
+
+<body>
+
+<h2>Luxe Hotel</h2>
+                    <!--ROOM 1-->
+<!--input where the user types a new item-->
+<input id="user" placeholder="Enter Guest Name">
+<button onclick="addItem()">ADD</button>
+<br><br>
+<!--input where the user types which item number to delete-->
+<input id="deleteNum" placeholder="Guest Number">
+<button onclick="removeItem()">REMOVE</button>
+<!--Area to show messages like "list is full", or "invalid number"-->
+<p id="output"></p>
+<!--ordered list (number list) to display the items-->
+<ol id="guestlist"></ol>
+                    <!--ROOM 2-->
+
+                    <!--ROOM 3-->
+
+                    <!--ROOM 4-->
+
+                    <!--ROOM 5-->
+                    
+                    <!--ROOM 6-->
+
+
+
+<script>
+////////////////////////////room 1/////////////////////////////////
+    //where you put your guest names
+let list = [];
+//adding guests function
+function addItem() {
+    let item = document.getElementById("user").value.trim();
+    document.getElementById("output").innerHTML = "";
+    if (item === "") {
+        document.getElementById("output").innerHTML = "Enter a guest name";
+        return;
+    }
+    //if there are less than 5 people in the list, you will
+    if (list.length < 5) {
+        let now = new Date();
+        let timestamp = now.getFullYear() + "-" +
+            String(now.getMonth() + 1).padStart(2, '0') + "-" +
+            String(now.getDate()).padStart(2, '0') + " " +
+            now.toLocaleTimeString();
+        // Store as an object
+        list.push({ name: item, time: timestamp });
+        document.getElementById("user").value = "";
+        updateList();
+    } else {
+        document.getElementById("output").innerHTML = "Room is full";
+    }
+}
+function removeItem() {
+    let num = parseInt(document.getElementById("deleteNum").value);
+    document.getElementById("output").innerHTML = "";
+    if (num > 0 && num <= list.length) {
+        list.splice(num - 1, 1);
+        updateList();
+    } else {
+        document.getElementById("output").innerHTML = "Invalid guest number";
+    }
+    document.getElementById("deleteNum").value = "";
+}
+function updateList() {
+    let ol = document.getElementById("guestlist");
+    ol.innerHTML = "";
+    for (let i = 0; i < list.length; i++) {
+        let li = document.createElement("li");
+        // Show name + timestamp
+        li.textContent = list[i].name + " — Checked in at: " + list[i].time;
+        ol.appendChild(li);
+    }
+}
+////////////////////////////room 2/////////////////////////////////
+let list2 = [];
+function addItem2() {
+    let item = document.getElementById("user2").value.trim();
+    document.getElementById("output2").innerHTML = "";
+    if (item === "") {
+        document.getElementById("output2").innerHTML = "Enter a guest name";
+        return;
+    }
+    if (list2.length < 5) {
+        let now2 = new Date();
+        let timestamp = now2.getFullYear() + "-" +
+            String(now2.getMonth() + 1).padStart(2, '0') + "-" +
+            String(now2.getDate()).padStart(2, '0') + " " +
+            now.toLocaleTimeString();
+        list2.push({ name: item, time: timestamp });
+        document.getElementById("user2").value = "";
+        updateList();
+    } else {
+        document.getElementById("output2").innerHTML = "Room is full";
+    }
+}
+function removeItem2() {
+    let num2 = parseInt(document.getElementById("deleteNum").value);
+    document.getElementById("output").innerHTML = "";
+    if (num2 > 0 && num2 <= list2.length) {
+        list2.splice(num - 1, 1);
+        updateList();
+    } else {
+        document.getElementById("output2").innerHTML = "Invalid guest number";
+    }
+    document.getElementById("deleteNum2").value = "";
+}
+function updateList2() {
+    let ol2 = document.getElementById("guestlist2");
+    ol2.innerHTML = "";
+    for (let i2 = 0; i2 < list.length; i2++) {
+        let li2 = document.createElement("li2");
+        li2.textContent = list2[i].name + " — Checked in at: " + list2[i].time;
+        ol2.appendChild(li2);
+    }
+}
+////////////////////////////room 3/////////////////////////////////
+////////////////////////////room 4/////////////////////////////////
+////////////////////////////room 5/////////////////////////////////
+////////////////////////////room 6/////////////////////////////////
+</script>
+
+<script src="workinghotel.js"></script>
+<link rel ="stylesheet" href="nicehotel.css" type="text/css">
+
+
+</body>
+</html>

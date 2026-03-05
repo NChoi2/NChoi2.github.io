@@ -1,0 +1,66 @@
+/* Page background */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9f0f5);
+    text-align: center;
+    padding-top: 40px;
+    margin: 0;
+}
+/* Title */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 600%;
+    font-family: serif;
+    font-style: italic;
+}
+/* Input boxes */
+input {
+    padding: 10px;
+    width: 220px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin: 5px;
+}
+/* Buttons */
+button {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:hover {
+    background-color: #34495e;
+    transform: scale(1.1);
+}
+/* Message text */
+#output {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #c0392b;
+    min-height: 20px;
+}
+/* Guest list box */
+ol {
+    margin: 25px auto;
+    padding: 15px;
+    width: 320px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+}
+/* Each guest item */
+li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+li:last-child {
+    border-bottom: none;
+}
