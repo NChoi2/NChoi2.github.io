@@ -22,12 +22,26 @@ let lockedRooms = {
     6: false
 };
 
+///////////////////////////////////MASTRE GUEST LIST FUNCTION
+function updateMasterList(){
+    const masterListEl = document.getElementById("masterguestlist");
+    masterListEl.innerHTML = "";
+
+    MasterList.forEach(guest => {
+        const li = document.createElement("li");
+        li.textContent = `${guest.name} - Room ${guest.room} - Checked in at ${guest.time}`;
+        masterListEl.appendChild(li);
+    });
+
+}
+
 ///////////////////////////////////// LOAD DATA FROM LOCAL STORAGE
 function loadData() {
     // Get saved room data 
     //hotleRooms is basically the BIG storage. everything goes inside here, and youre basically getting the data from here
     const savedRooms = localStorage.getItem("hotelRooms");
     const savedLocks = localStorage.getItem("hotelLocks");
+    const savedMaster = localStorage.getItem("masterGuestList")
     // JSON.parse basiclaly turns the string back into a data allowing you to show the thing
     if (savedRooms) {
         rooms = JSON.parse(savedRooms);
@@ -36,18 +50,25 @@ function loadData() {
     if (savedLocks) {
         lockedRooms = JSON.parse(savedLocks);
     }
+    if (savedMaster) {
+        MasterList = JSON.parse(savedMaster);
+    }
 }
 // SAVE DATA TO LOCAL STORAGE
 //converting the objects into a string
 function saveData() {
     localStorage.setItem("hotelRooms", JSON.stringify(rooms));
     localStorage.setItem("hotelLocks", JSON.stringify(lockedRooms));
+    localStorage.setItem("masterGuestList", JSON.stringify(MasterList));
 }
 ///////////////////////////////////////////////// LOCK / UNLOCK ROOM
+//roomnum represents the room nmubers 123456. I made this so that i dont have to keep calling ou indivisual room numbers
 function toggleLock(roomNum) {
     lockedRooms[roomNum] = !lockedRooms[roomNum];
     // Get the lock button for that room
     const btn = document.getElementById(`lockBtn-${roomNum}`);
+    //btn.closest basically searches upwards to find the first element that matches the selector, ".room"
+    //roomDiv is basically an easier way to type all the .room stuff, same with roomNum, i dont have to indivisually write each and every single one of them
     const roomDiv = btn.closest(".room");
     // If room is now locked
     if (lockedRooms[roomNum]) {
@@ -92,8 +113,14 @@ function addItem(roomNum) {
         name: name,
         time: timestamp
     });
+    MasterList.push({
+        name: name,
+        room: roomNum,
+        time: timestamp
+    })
     input.value = "";
     updateList(roomNum);
+    updateMasterList();
     saveData();
 }
 //////////////////////////////////////////////////////////remove
@@ -163,4 +190,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    updateMasterList();
 });
