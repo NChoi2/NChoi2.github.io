@@ -24,18 +24,24 @@ let lockedRooms = {
 
 ///////////////////////////////////MASTRE GUEST LIST FUNCTION
 function updateMasterList(){
+    //const allows the properties or elmeents to be hanged, but cannot change the value. this is important as this is the MGL and only the inside of it should be changed.
     const masterListEl = document.getElementById("masterguestlist")
+    //this is needed or else everytime you duplicate it, it will re-add everything again
     masterListEl.innerHTML = ""
-
+//i made it like this because it will go in order =>
     MasterList.forEach(guest => {
+        //li basicaly creates another area for a new uest to be made
         const li = document.createElement("li")
+        //a template when a guest is added
         li.textContent = `${guest.name} - Room ${guest.room} - Checked in at ${guest.time}`
+        //adding the thing
         masterListEl.appendChild(li)
     })
 
 }
 
 ///////////////////////////////////// LOAD DATA FROM LOCLA STORAGE
+//used ai
 function loadData() {
     // Get saved room data 
     //hotleRooms is basically the BIG storage. everything goes inside here, and youre basically getting the data from here
@@ -50,6 +56,8 @@ function loadData() {
     if (savedLocks) {
         lockedRooms = JSON.parse(savedLocks)
     }
+    //if i were to use something else, it wouldnt wokr because local storage only accepts strings
+    //didnt use tostring() because it doesnt look pretty
     if (savedMaster) {
         MasterList = JSON.parse(savedMaster)
     }
@@ -123,6 +131,7 @@ function addItem(roomNum) {
     saveData()
 }
 //////////////////////////////////////////////////////////remove
+//usd the groccery thing (shopping list)
 function removeItem(roomNum) {
     if (lockedRooms[roomNum]) {
         document.getElementById(`output-${roomNum}`).innerHTML = "Room is locked!"
@@ -148,13 +157,22 @@ function removeItem(roomNum) {
     numInput.value = ""
 }
 //////////////////////////////////////////////////////////remove all
+//Clear All
 function clearAll(ca){
     //clear ALL localstorage keys
     rooms[ca] = []
     updateList(ca)
     saveData()
+
+
+}
+function clearingMGL(camgl){
+    MasterList[camgl] = []
+    updateList(camgl)
+    saveData()
 }
 //////////////////////////////////////////////////////////update
+//using the local storage 1 or 2, p1 p2 and script.js function thing to help
 function updateList(roomNum) {
     //get the list
     const listEl = document.getElementById(`guestlist-${roomNum}`)
